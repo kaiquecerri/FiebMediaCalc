@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+
+    <style>
+        body{
+            font-family: "Segoe UI", Arial, sans-serif;
+            text-align: center;
+            background-color: #14171A;
+            color: #F5F8FA;
+            font-size: 20px;
+        }
+        main{
+            display: block;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+        form {
+            display: inline;
+        }
+
+        h1, h2 {
+            color: #1DA1F2;
+        }
+
+        input{
+            background-color: #F5F8FA;
+            color: #14171A;
+            border-style: none;
+            width: 50px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+
+        input:hover{
+            background-color: #AAB8C2;
+            width:55px;
+        }
+
+        button{
+            background-color: #AAB8C2;
+            color: #14171A;
+            border-style: none;
+            height:40px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: #F5F8FA;
+            width:220px;
+
+        }
+
+        #result{
+            width: 300px;
+            height:30px;
+        }
+
+    </style>
+</head>
+<body >
+    <main>
+    <h1>Calculadora de Média Final</h1>
+
+        <label for="atitudinal">Insira sua atitudinal:</label>
+        <input type="number" name="atitudinal" id="atitudinal" min="0" max="2" value="2">
+        <br>
+        <br>
+
+        <button id="addInputButton">Adicionar Campo de P7</button>
+        <br>
+        <br>
+
+        <label for="p7">Nota Peso 7:</label>
+        <input type="number" name="p7" id="p7" min="0" max="7">
+        <br>
+        <br>
+
+        <div id="p7_extra"></div>
+        
+
+        <button id="AddP9Button">Adicionar Campo de Peso 9</button>
+        <br>
+        <br>
+
+        <label for="p9">Nota Peso 9:</label>
+        <input type="number" name="p9" id="p9" min="0" max="9">
+        <br>
+        <br>
+        <div id="p9_extra"></div>
+        <br>
+        
+
+        <button id="calcular">Calcular</button>
+        <h2>
+        <label for="result">Resultado:</label><br>
+        <input type="number" name="result" id="result" min="0" max="10" readonly>
+        </h2>
+
+</main>
+
+
+
+<script>
+    p7_quantity = 0
+
+    function AddP7(){
+        p7_quantity += 1
+        let inp = document.createElement("input");
+        inp.type = "number";
+        inp.id = "p7_" + p7_quantity
+        inp.min = "0"
+        inp.max = "7"
+        inp.value = "0"
+
+        let label = document.createElement("label");
+        label.for = inp.id
+        label.id = inp.id + "l"
+
+        let space = document.createElement("br");
+        let space1 = document.createElement("br");
+        document.getElementById("p7_extra").appendChild(label);
+        document.getElementById("p7_extra").appendChild(inp);
+        document.getElementById("p7_extra").appendChild(space);
+        document.getElementById("p7_extra").appendChild(space1);
+
+        document.getElementById(label.id).innerHTML = "Nota Peso 7:"
+    }
+
+    p9_quantity = 0
+
+    function AddP9(){
+        p9_quantity += 1
+        let inp = document.createElement("input");
+        inp.type = "number";
+        inp.id = "p9_" + p9_quantity
+        inp.min = "0"
+        inp.max = "9"
+        inp.value = "0"
+
+
+        let label = document.createElement("label");
+        label.for = inp.id
+        label.id = inp.id + "l"
+
+        let space = document.createElement("br");
+        let space1 = document.createElement("br");
+        document.getElementById("p9_extra").appendChild(label);
+        document.getElementById("p9_extra").appendChild(inp);
+        document.getElementById("p9_extra").appendChild(space);
+        document.getElementById("p9_extra").appendChild(space1);
+
+        document.getElementById(label.id).innerHTML = "Nota Peso 9:"
+    }
+
+    function CalcularMedia(){
+        let p7 = Number(document.getElementById("p7").value)
+        let divide = 1
+
+        
+        for(i=1; i < p7_quantity+1; i++){
+            p7 += Number(document.getElementById("p7_"+i).value)
+            divide += 1
+        }
+
+        p7 = p7/divide
+
+        let p9 = Number(document.getElementById("p9").value)
+        let dividep9 = 1
+
+        
+        for(i=1; i < p9_quantity+1; i++){
+            p9 += Number(document.getElementById("p9_"+i).value)
+            dividep9 += 1
+        }
+
+        p9 = p9/dividep9
+
+        atitudinal = Number(document.getElementById("atitudinal").value)
+        let final = ((p7+p9)/2)+atitudinal
+
+        document.getElementById("result").value = final
+
+        
+    }
+
+    document.getElementById("addInputButton").addEventListener("click", AddP7);
+    document.getElementById("AddP9Button").addEventListener("click", AddP9);
+    document.getElementById("calcular").addEventListener("click", CalcularMedia);
+    
+</script>
+</body>
+</html>
