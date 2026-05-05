@@ -1,51 +1,51 @@
-# 📊 Calculadora de Média Final
+# 📊 Final Grade Calculator
 
-Este projeto é uma **calculadora de média escolar** feita em **HTML, CSS e JavaScript puro**, sem uso de bibliotecas externas.
+This project is a **school grade calculator** built with **pure HTML, CSS, and JavaScript**, without external libraries.
 
-Ela permite calcular a **média final** a partir de:
+It calculates the **final grade** based on:
 
-* Notas de **Peso 7** (quantidade variável)
-* Notas de **Peso 9** (quantidade variável)
-* Nota **Atitudinal**
-
----
-
-## 🎯 Funcionalidades
-
-* Adicionar múltiplas notas de **Peso 7**
-* Adicionar múltiplas notas de **Peso 9**
-* Cálculo automático da média
-* Interface simples e responsiva
-* Funciona 100% no navegador
+* **Weight 7** grades (variable amount)
+* **Weight 9** grades (variable amount)
+* **Attitudinal** grade
 
 ---
 
-## 🧮 Como funciona o cálculo
+## 🎯 Features
 
-1. Calcula a média das notas de **Peso 7**
-2. Calcula a média das notas de **Peso 9**
-3. Faz a média entre Peso 7 e Peso 9
-4. Soma a nota **Atitudinal** ao resultado final
+* Add multiple **Weight 7** grades
+* Add multiple **Weight 9** grades
+* Automatic grade calculation
+* Simple and responsive interface
+* Runs 100% in the browser
 
-**Fórmula:**
+---
+
+## 🧮 How the calculation works
+
+1. Calculates the average of **Weight 7** grades
+2. Calculates the average of **Weight 9** grades
+3. Averages both results
+4. Adds the **Attitudinal** grade to the final result
+
+**Formula:**
 
 ```
-Média Final = ((média P7 + média P9) / 2) + Atitudinal
+Final Grade = ((avg P7 + avg P9) / 2) + Attitudinal
 ```
 
 ---
 
-## ▶️ Como usar
+## ▶️ How to use
 
-1. Abra o arquivo `index.html` no navegador
-2. Insira a nota atitudinal
-3. Adicione quantas notas quiser de Peso 7 e Peso 9
-4. Clique em **Calcular**
-5. Veja o resultado final
+1. Open the `index.html` file in your browser
+2. Enter the attitudinal grade
+3. Add as many Weight 7 and Weight 9 grades as you want
+4. Click **Calculate**
+5. View the final result
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## 🛠️ Technologies used
 
 * HTML5
 * CSS3
@@ -53,7 +53,7 @@ Média Final = ((média P7 + média P9) / 2) + Atitudinal
 
 ---
 
-## 📁 Estrutura
+## 📁 Structure
 
 ```
 index.html
@@ -62,10 +62,10 @@ README.md
 
 ---
 
-## 👤 Autor
+## 👤 Author
 
-Feito por **Cerri**
+Made by **Cerri**
 
 ---
 
-✅ Projeto simples, ideal para estudos de **JavaScript básico**, manipulação do DOM e lógica de cálculo.
+✅ Simple project, ideal for learning **basic JavaScript**, DOM manipulation, and calculation logic.
